@@ -7,7 +7,6 @@
   "scripts": {
     "build": "tsc && rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\" && Write-Host -ForegroundColor green \"✔️ Finished compiling/bundling your script to the dist folder!\""
   },
-  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.2",
     "rollup": "^3.25.3",
