@@ -1,0 +1,19 @@
+{
+  "name": "latite-scripting-template",
+  "version": "1.0.0",
+  "description": "A template for Latite Scripting",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.2",
+    "rollup": "^3.25.3",
+    "rollup-plugin-combine": "^2.1.1",
+    "rollup-plugin-match": "^1.0.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.3"
+  }
+}
