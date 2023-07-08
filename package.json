@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\""
+    "build": "tsc && rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\" && Write-Host -ForegroundColor green \"✔️ Finished compiling/bundling your script to the dist folder!\""
   },
   "license": "MIT",
   "devDependencies": {
