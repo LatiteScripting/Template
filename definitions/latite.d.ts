@@ -49,7 +49,7 @@ interface ClientEvents {
     "render2d": LatiteEvent,
     "key-press": KeyEvent,
     "click": ClickEvent,
-    "render3d": LatiteEvent,
+    "render3d": CancellableEvent,
     /**
      * Whenever the game gets minimized or closed.
      */

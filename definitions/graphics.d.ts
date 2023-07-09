@@ -58,8 +58,14 @@ declare interface Graphics2D {
     fillRect(rect: Rect, color: Color): void;
     drawText(rect: Rect, color: Color, text: string, size: number, font: Font, alignment: TextAlignment): void;
     getTextSize(text: string, size: number, font: Font): Vector2;
+
     setClippingRect(rect: Rect): void;
     restoreClippingRect(): void;
+
+    drawTriangle(p1: Vector3, p2: Vector3, p3: Vector3, color: Color, thickness: number): void;
+    fillTriangle(p1: Vector3, p2: Vector3, p3: Vector3, color: Color): void;
+    drawCircle(center: Vector3, radius: number, color: Color, thickness: number): void;
+    fillCircle(center: Vector3, radius: number, color: Color): void;
 }
 
 declare const graphics: Graphics2D;
