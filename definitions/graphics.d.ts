@@ -15,25 +15,71 @@ declare class Rect {
 }
 
 declare class Vector2 {
+    add: (vec: Vector2) => Vector2;
+    sub: (vec: Vector2) => Vector2;
+    mul: (vec: Vector2) => Vector2;
+    div: (vec: Vector2) => Vector2;
+    distanceTo: (pos: Vector2) => number;
     /**
      * A point on the screen.
      * @param x The x coordinate.
      * @param y The y coordinate.
      */
     constructor(x: number, y: number);
+    constructor();
 
     x: number;
     y: number;
 }
 
 declare class Vector3 {
+    add: (vec: Vector3) => Vector3;
+    sub: (vec: Vector3) => Vector3;
+    mul: (vec: Vector3) => Vector3;
+    div: (vec: Vector3) => Vector3;
+    distanceTo: (pos: Vector3) => number;
+
     constructor(x: number, y: number, z: number);
+    constructor();
     x: number;
     y: number;
     z: number;
 }
 
-type Color = [number, number, number, number];
+declare class Color {
+    asAlpha: (opacity: number) => Color;
+
+    public r: number;
+    public g: number;
+    public b: number;
+    public a: number;
+
+    /**
+     * 
+     * @param r Red (0.0 to 1.0)
+     * @param g Green (0.0 to 1.0)
+     * @param b Blue (0.0 to 1.0)
+     * @param a Opacity (0.0 to 1.0)
+     */
+    constructor(r: number, g: number, b: number, a: number);
+
+    constructor();
+
+    /**
+     * 
+     * @param r Red (0 to 255)
+     * @param g Green (0 to 255)
+     * @param b Blue (0 to 255)
+     * @param a Opacity (0 to 255)
+     */
+    static RGB(r: number, g: number, b: number, a: number | undefined): Color;
+
+    static WHITE: Color;
+    static BLACK: Color;
+    static RED: Color;
+    static GREEN: Color;
+    static BLUE: Color;
+}
 
 declare const enum TextAlignment {
     Left,
@@ -41,31 +87,15 @@ declare const enum TextAlignment {
     Center
 }
 
-declare const enum Font {
-    /**
-     * By default, this is Noto Sans
-     */
-    Smooth,
-    /**
-     * By default, this is Mojangles
-     */
-    Minecraft,
-    MinecraftTen
+declare const enum VerticalAlignment {
+    Top,
+    Bottom,
+    Center
 }
 
-declare interface Graphics2D {
+declare interface DXGraphics {
     drawRect(rect: Rect, color: Color, thickness: number): void;
     fillRect(rect: Rect, color: Color): void;
-    drawText(rect: Rect, color: Color, text: string, size: number, font: Font, alignment: TextAlignment): void;
-    getTextSize(text: string, size: number, font: Font): Vector2;
-
-    setClippingRect(rect: Rect): void;
-    restoreClippingRect(): void;
-
-    drawTriangle(p1: Vector3, p2: Vector3, p3: Vector3, color: Color, thickness: number): void;
-    fillTriangle(p1: Vector3, p2: Vector3, p3: Vector3, color: Color): void;
-    drawCircle(center: Vector3, radius: number, color: Color, thickness: number): void;
-    fillCircle(center: Vector3, radius: number, color: Color): void;
 }
 
-declare const graphics: Graphics2D;
+declare const dx: DXGraphics;
