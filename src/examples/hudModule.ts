@@ -1,4 +1,4 @@
-const test = new HudModule(
+/*const test = new HudModule(
   "TestModule",
   "Test Hud Module",
   "",
@@ -39,3 +39,6 @@ client.on("unload-script", (ev) => {
     client.getModuleManager().deregisterModule(test);
   }
 });
+*/
+
+// outdated

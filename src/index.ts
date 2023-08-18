@@ -3,6 +3,7 @@
 // import "./examples/hudModule";
 // import helloWorld from "./examples/helloWorld";
 // helloWorld();
+import "./examples/http-filesystem.ts";
 
 script.name = "Template";
 // script.version = "1.0.0"
