@@ -8,4 +8,4 @@
 - [Example scripts](https://github.com/LatiteScripting/Template/tree/master/src/examples)
 
 ## How do I use the template?
-This template is the one used in [CNLSP](https://github.com/Plextora/CNLSP/releases/tag/1.1.3), a program that can automatically setup a scripting project for you.
+This template is the one used in [CNLSP](https://github.com/LatiteScripting/CNLSP/releases/tag/1.1.3), a program that can automatically setup a scripting project for you.
