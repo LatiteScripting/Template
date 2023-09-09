@@ -9,7 +9,7 @@ export default {
   }, // ignore all warnings. remove those 3 lines if you want warning output :)
   plugins: [match(), combine()],
   output: {
-    file: "./index.js",
+    file: "./dist/index.js",
     format: "es",
   },
   plugins: [typescript()],
