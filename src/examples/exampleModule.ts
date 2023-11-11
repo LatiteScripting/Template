@@ -8,23 +8,23 @@ const mod = new Module(
 
 // adds a new setting to the module
 let sliderSetting = mod.addNumberSetting("setting", "Example Slider", "Example Description",
- /*the minimum*/ 0, /*the maximum*/10000, /*the precision*/50);
+ /*the minimum*/ 0, /*the maximum*/10000, /*the precision*/50,/*the default value */ 10);
 
 // adds the module into the client
 client.getModuleManager().registerModule(mod);
 
 mod.on("enable", () => {
     // this happens when the module is enabled
-    script.log("module enabled!");
+    clientMessage("module enabled!");
 
     // accessing our setting
     // if we set our setting to 400, it will print "setting is set to 400"
-    script.log("setting is set to " + sliderSetting.getValue());
+    clientMessage("setting is set to " + sliderSetting.getValue());
 });
 
 mod.on("disable", () => {
     // this happens when module is disabled
-    script.log("module disabled!");
+    clientMessage("module disabled!");
 });
 
 mod.on("get-hold-to-toggle", () => {
@@ -32,7 +32,7 @@ mod.on("get-hold-to-toggle", () => {
 });
 
 client.on("unload-script", (ev) => {
-    if (ev.scriptName === script.name) {
+    if (ev.scriptName === "Template" /*your script name you see in plugin.json*/) {
         // remove our module when our script is unloaded
         client.getModuleManager().deregisterModule(mod);
     }

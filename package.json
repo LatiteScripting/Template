@@ -5,11 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\" && %Windir%\\System32\\WindowsPowerShell\\v1.0\\Powershell.exe Write-Host -ForegroundColor green \"Finished compiling/bundling your script to the dist folder!\""
+    "build": "tsc && copy .\\src\\plugin.json .\\out\\plugin.json"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.2",
-    "rollup": "^3.25.3",
     "rollup-plugin-combine": "^2.1.1",
     "rollup-plugin-match": "^1.0.0",
     "tslib": "^2.6.0",

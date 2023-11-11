@@ -103,9 +103,50 @@ declare const enum VerticalAlignment {
     Center
 }
 
-declare interface DXGraphics {
+type BackendType 
+    = 
+    /**
+     *  */
+    "dx";
+
+declare interface Graphics {
+    /**
+     * 
+     * @param renderer `"dx"`: uses Direct2D/DirectWrite, `"minecraft":` use the Minecraft renderer
+     */
+    use(renderer: "dx" | "minecraft"): void;
     drawRect(rect: Rect, color: Color, thickness: number): void;
     fillRect(rect: Rect, color: Color): void;
+
+    /**
+     * Draws text on the position specified
+     * @param pos The position to draw the text
+     * @param text The text to draw
+     * @param size The size of the text in pixels
+     * @param color The color of the text
+     */
+    drawText(pos: Vector2, text: string, size: number, color: Color): void;
+
+    /**
+     * A full verison of drawText, where you can specify the bounds of the text and the alignment
+     * @param area The place to render the text 
+     * @param text The text to render
+     * @param size The size of the text
+     * @param color The color of the text
+     * @param alignment The horizontal alignment
+     * @param verticalAlignment The vertical alignment
+     */
+    drawTextFull(area: Rect, text: string, size: number, color: Color, alignment: TextAlignment, verticalAlignment: VerticalAlignment): void;
+
+    /**
+     * Draws a texture.
+     * @param texture The texture to draw
+     * @param pos The position to draw the texture
+     * @param sizeX The size of the texture in pixels
+     * @param sizeY The size of the texture in pixels
+     * @param color The overlay color of the texture (defaults to white)
+     */
+    drawTexture(texture: Texture, pos: Vector2, sizeX: number, sizeY: number, color?: Color): void;
 }
 
-declare const dx: DXGraphics;
+declare const graphics: Graphics;

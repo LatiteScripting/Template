@@ -31,7 +31,7 @@ test.on("render", (isPreview, isEditor) => {
       TextAlignment.Left,
     );
   } catch (e) {
-    script.log(e);
+    clientMessage(e);
   }
 });
 

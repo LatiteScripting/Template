@@ -1,21 +1,14 @@
-interface Script {
-    /**
-     * Prints to chat, and logs the contents to file. They are seperated by new lines.
-     * @param contents The contents to log.
-     */
-    log(... contents: any[]): void;
-
-    name: string;
-    author: string;
-    version: string;
-    description: string;
-}
-declare var script: Script;
-
 interface EngineLibraries {
     "filesystem": include.Filesystem
-    "network": include.Network
+    "http": include.HTTP
+    "clipboard": include.Clipboard
 }
+
+/**
+ * Prints to chat.
+ * @param contents The contents to log.
+ */
+declare function clientMessage(... contents: any[]): void;
 
 /**
  * Load a specified library.
@@ -23,12 +16,12 @@ interface EngineLibraries {
  * @throws Invalid filepath or Non-OK HTTP/HTTPS error code
  */
 declare function require<K extends keyof EngineLibraries>(path: K): EngineLibraries[K];
+
 /**
- * Load a specified script from filesystem or web.
- * @param path The filepath, HTTP or HTTPS link to the JS file.
- * @throws Invalid filepath or Non-OK HTTP/HTTPS error code
+ * 
+ * @param path The path to load the library
  */
-declare function require(path: string): object;
+declare function require(path: string): any;
 
 /**
  * Stops execution for a specified amount of time.
@@ -53,3 +46,12 @@ declare function setTimeout(func: () => void, timeout: number): number;
  * @returns The Timeout ID
  */
 declare function setInterval(func: () => void, timeout: number): number;
+
+interface ScriptModule {
+    /**
+     * What the script exports.
+     */
+    exports: {}
+}
+
+declare const module: ScriptModule;
