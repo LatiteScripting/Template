@@ -5,13 +5,5 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-    },
-    "devServer": {
-        "stats": {
-            "errors": false
-        }
-    },
-    infrastructureLogging: {
-        level: 'error',
-      }, // suppress the warnings about require()
+    }
 };
