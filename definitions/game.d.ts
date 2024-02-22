@@ -41,6 +41,9 @@ interface Game {
      */
     getWorld() : World | null;
 
+    /**
+     * Get whether you are in a UI screen
+     */
     isInUI(): boolean;
 
     /**
@@ -52,6 +55,49 @@ interface Game {
      * Get the mouse position.
      */
     getMousePos(): Vector2;
+
+    /**
+     * Gets the user's input setting. Usually a key code; for example, `"forward"` returns `KeyCode.W` by default.
+     * 
+     * If this function returns 0, either the key is set to nothing or the specified name was not found.
+     */
+    getInputBinding(name: InputBinding): number;
 }
+
+type InputBinding =
+    "attack" |
+    "pickItem" |
+    "use" |
+    "drop" |
+    "hotbar.1" |
+    "hotbar.2" |
+    "hotbar.3" |
+    "hotbar.4" |
+    "hotbar.5" |
+    "hotbar.6" |
+    "hotbar.7" |
+    "hotbar.8" |
+    "hotbar.9" |
+    "inventory" |
+    "togglePerspective" |
+    "jump" |
+    "sneak" |
+    "sprint" |
+    "left" |
+    "right" |
+    "back" |
+    "forward" |
+    "mobEffects" |
+    "chat" |
+    "command" |
+    "copyCoordinates" |
+    "copyFacingCoordinates" |
+    "toggleControlTips" |
+    "codeBuilder" |
+    "immersivereader" |
+    "emote" |
+    "menuTabLeft" |
+    "menuTabRight" |
+    "menuCancel";
 
 declare const game: Game;

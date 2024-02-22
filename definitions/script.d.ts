@@ -54,4 +54,28 @@ interface ScriptModule {
     exports: {}
 }
 
-declare const module: ScriptModule;
+interface IScript {
+    /**
+     * @deprecated
+     */
+    name: string;
+
+    /**
+     * @deprecated
+     */
+    author: string;
+
+    /**
+     * @deprecated
+     */
+    description: string;
+
+    /**
+     * @deprecated
+     * @param values 
+     * @returns 
+     */
+    log: (... values: any[]) => void 
+}
+
+declare var script: IScript;
