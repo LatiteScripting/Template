@@ -5,21 +5,20 @@ interface EngineLibraries {
 }
 
 /**
- * Prints to chat.
- * @param contents The contents to log.
+ * Adds chat message(s) to the chat.
+ * @param contents The contents to send to chat. They will be separated into different chat messages.
  */
-declare function clientMessage(... contents: any[]): void;
+declare function clientMessage(... messages: any[]): void;
 
 /**
  * Load a specified library.
- * @param path The filepath, HTTP or HTTPS link to the JS file.
- * @throws Invalid filepath or Non-OK HTTP/HTTPS error code
+ * @param library The Latite Scripting engine built-in library.
  */
-declare function require<K extends keyof EngineLibraries>(path: K): EngineLibraries[K];
+declare function require<K extends keyof EngineLibraries>(library: K): EngineLibraries[K];
 
 /**
- * 
- * @param path The path to load the library
+ * Load and run a specified JavaScript module. This returns whatever is in `exports` or `module.exports` of the JavaScript module.
+ * @param path The path to load the JavaScript file.
  */
 declare function require(path: string): any;
 
@@ -43,9 +42,21 @@ declare function setTimeout(func: () => void, timeout: number): number;
  * Calls a function every x milliseconds.
  * @param func The function to call
  * @param timeout The time in milliseconds
- * @returns The Timeout ID
+ * @returns The Interval ID
  */
 declare function setInterval(func: () => void, timeout: number): number;
+
+/**
+ * Cancels a timeout with a specified ID (stops it from executing.) No effect if the id is invalid.
+ * @param timeoutId A valid Timeout ID. It is the return value of the `setTimeout` function.
+ */
+declare function clearTimeout(timeoutId: number): void;
+
+/**
+ * Cancels an interval with a specified ID (stops it from executing.) No effect if the id is invalid.
+ * @param intervalId A valid Interval ID. It is the return value of the `setInterval` function.
+ */
+declare function clearInterval(intervalId: number): void;
 
 interface ScriptModule {
     /**

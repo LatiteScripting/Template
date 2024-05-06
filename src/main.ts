@@ -10,5 +10,4 @@
 
 clientMessage("Hello World from Latite Template!");
 
-
-export { } // Leave this here to fix name conflicts
+export {}; // Leave this here to fix name conflicts

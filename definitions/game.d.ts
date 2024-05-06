@@ -37,9 +37,22 @@ interface Game {
     getFeaturedServer(): string | null;
 
     /**
-     * Get the current world that you're in.
+     * Gets the port of the server you're connected to. If you are not in a server, it returns 0.
      */
-    getWorld() : World | null;
+    getPort(): number;
+
+    /**
+     * @deprecated use `world`
+     * Get the World object.
+     */
+    getWorld() : World;
+
+
+    /**
+     * @deprecated use `dimension`
+     * Get the Dimension object.
+     */
+    getDimension(): Dimension;
 
     /**
      * Get whether you are in a UI screen
