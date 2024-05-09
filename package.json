@@ -8,9 +8,6 @@
     "build": "tsc && copy .\\src\\plugin.json .\\out\\plugin.json"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.2",
-    "rollup-plugin-combine": "^2.1.1",
-    "rollup-plugin-match": "^1.0.0",
     "tslib": "^2.6.0",
     "typescript": "^5.1.3"
   },
