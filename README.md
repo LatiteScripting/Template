@@ -2,7 +2,7 @@
 
 ## A template for Latite Scripting that includes:
 - [Typescript](https://www.typescriptlang.org/) (types and linting)
-- Up to date [definitions](https://github.com/LatiteScripting/latitescripting.github.io/tree/main/definitions) for VSCode autocomplete
+- Up to date [definitions](https://www.npmjs.com/package/@latitescripting/latiteapi) for VSCode autocomplete via npm
 - [a VSCode task](https://github.com/LatiteScripting/Template/blob/master/.vscode/tasks.json) for compiling with Typescript (Ctrl + Shift + B),
 - [Example scripts](https://github.com/LatiteScripting/Template/tree/master/src/examples)
 
