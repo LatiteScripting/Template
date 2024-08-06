@@ -1,6 +1,6 @@
 {
   "name": "latite-scripting-template",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "A template for Latite Scripting",
   "main": "index.js",
   "type": "module",
@@ -12,6 +12,6 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
-    "@latitescripting/latiteapi": "^2.0.0"
+    "@latitescripting/latiteapi": "^2.1.1"
   }
 }
